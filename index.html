@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elo Delivery Bogotá</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Apps de Delivery en Bogotá</h1>
+        <p>¿Cuál prefieres usar para pedir tu almuerzo hoy?</p>
+        
+        <div id="duelo" class="matchup">
+            <button id="app-a" onclick="votar('A')" class="card">Cargando...</button>
+            <span class="vs">VS</span>
+            <button id="app-b" onclick="votar('B')" class="card">Cargando...</button>
+        </div>
+
+        <button onclick="verRanking()" class="btn-info">Ver Ranking Gerencial</button>
+
+        <div id="ranking" class="hidden">
+            <h3>Posicionamiento (Rating Elo)</h3>
+            <div id="lista-ranking"></div>
+            <button onclick="cerrarRanking()" class="btn-info">Volver a votar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
