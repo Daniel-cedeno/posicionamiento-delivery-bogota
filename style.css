@@ -1,9 +1,65 @@
-body { font-family: sans-serif; background: #f4f7f6; display: flex; justify-content: center; padding: 20px; }
-.container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 400px; text-align: center; }
-.matchup { display: flex; justify-content: space-around; align-items: center; margin: 30px 0; }
-.card { background: #e67e22; color: white; border: none; padding: 20px; border-radius: 8px; cursor: pointer; width: 40%; font-weight: bold; transition: 0.2s; }
-.card:hover { background: #d35400; transform: scale(1.05); }
-.vs { font-weight: bold; color: #7f8c8d; }
-.btn-info { background: #34495e; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; margin-top: 20px; }
+:root {
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --bg: #f8f9fa;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg);
+    color: var(--primary);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.dashboard {
+    width: 90%;
+    max-width: 800px;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+header { text-align: center; border-bottom: 2px solid #eee; margin-bottom: 2rem; padding-bottom: 1rem; }
+h1 { margin: 0; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 1px; }
+
+.instruction { text-align: center; font-weight: 600; margin-bottom: 2rem; color: #7f8c8d; }
+
+.matchup { display: flex; justify-content: space-around; align-items: center; gap: 1rem; }
+
+.app-card {
+    flex: 1;
+    background: var(--white);
+    border: 1px solid #e1e8ed;
+    padding: 2rem;
+    border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+.app-card img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem; }
+
+.vs-badge { background: #e74c3c; color: white; padding: 10px; border-radius: 50%; font-weight: bold; font-size: 0.8rem; }
+
+.stats-mini { text-align: center; margin-top: 2rem; font-size: 0.8rem; color: #95a5a6; }
+
+.btn-primary {
+    display: block; width: 100%; padding: 1rem; margin-top: 2rem;
+    background: var(--primary); color: white; border: none;
+    border-radius: 10px; cursor: pointer; font-weight: bold;
+}
+
 .hidden { display: none; }
-#lista-ranking { text-align: left; margin-top: 15px; }
+.chart-container { margin-bottom: 2rem; height: 300px; }
+
+table { width: 100%; border-collapse: collapse; }
+th { text-align: left; padding: 1rem; background: #f8f9fa; }
+td { padding: 1rem; border-bottom: 1px solid #eee; }
