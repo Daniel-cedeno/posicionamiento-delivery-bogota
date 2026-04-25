@@ -3,27 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elo Delivery Bogotá</title>
+    <title>Market Insights | Delivery Bogotá</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Apps de Delivery en Bogotá</h1>
-        <p>¿Cuál prefieres usar para pedir tu almuerzo hoy?</p>
-        
-        <div id="duelo" class="matchup">
-            <button id="app-a" onclick="votar('A')" class="card">Cargando...</button>
-            <span class="vs">VS</span>
-            <button id="app-b" onclick="votar('B')" class="card">Cargando...</button>
-        </div>
+    <div class="dashboard">
+        <header>
+            <h1>Consumer Preference Analytics</h1>
+            <p>Estudio de Posicionamiento: Apps de Delivery Bogotá</p>
+        </header>
 
-        <button onclick="verRanking()" class="btn-info">Ver Ranking Gerencial</button>
+        <main id="main-content">
+            <section id="voting-area" class="card-container">
+                <div class="instruction">¿Qué plataforma ofrece mejor propuesta de valor?</div>
+                <div class="matchup">
+                    <div id="option-a" onclick="votar('A')" class="app-card">
+                        <img id="img-a" src="" alt="logo">
+                        <span id="name-a"></span>
+                    </div>
+                    <div class="vs-badge">VS</div>
+                    <div id="option-b" onclick="votar('B')" class="app-card">
+                        <img id="img-b" src="" alt="logo">
+                        <span id="name-b"></span>
+                    </div>
+                </div>
+                <div class="stats-mini">Votos registrados: <span id="vote-count">0</span></div>
+            </section>
 
-        <div id="ranking" class="hidden">
-            <h3>Posicionamiento (Rating Elo)</h3>
-            <div id="lista-ranking"></div>
-            <button onclick="cerrarRanking()" class="btn-info">Volver a votar</button>
-        </div>
+            <section id="results-area" class="hidden">
+                <div class="chart-container">
+                    <canvas id="eloChart"></canvas>
+                </div>
+                <div class="table-wrapper">
+                    <table id="rankTable">
+                        <thead>
+                            <tr>
+                                <th>Ranking</th>
+                                <th>Plataforma</th>
+                                <th>Rating Elo</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <button class="btn-primary" onclick="toggleView()" id="view-btn">Analizar Data de Mercado</button>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>
